@@ -1,0 +1,15 @@
+.container { max-width:420px; margin:50px auto; font-family: sans-serif }
+.title { font-size:24px; margin-bottom:18px; font-weight:600; color:#222 }
+.form { display:flex; flex-direction:column; gap:14px; }
+.input { width:100%; padding:12px; border:1px solid #e0e0e0; border-radius:6px; box-sizing:border-box }
+.passwordWrapper { position:relative }
+.eyeButton {
+  position:absolute; right:12px; top:50%; transform:translateY(-50%);
+  background:none;border:none;cursor:pointer;padding:4px;font-size:16px
+}
+.options { display:flex; justify-content:space-between; align-items:center; font-size:14px }
+.checkboxLabel { display:flex; align-items:center; gap:8px }
+.forgot { color:#666; text-decoration:none; font-size:14px }
+.button { background:#8b8b8b; color:#fff; border:none; padding:12px; border-radius:6px; font-weight:700; cursor:pointer }
+.switchText { margin-top:16px; text-align:center; color:#444 }
+.link { background:none; border:1px solid #2b6cff; color:#2b6cff; padding:10px 12px; border-radius:6px; cursor:pointer }

@@ -1,0 +1,67 @@
+/* Header container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+/* Logo */
+.logo img {
+  height: 40px;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav a {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1f2937;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: #2563eb;
+}
+
+/* User section */
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.account {
+  font-size: 14px;
+  color: #374151;
+}
+
+.button {
+  padding: 8px 16px;
+  background: #3b82f6;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: #2563eb;
+}
+
+/* Menu icon (mobile) */
+.menuIcon {
+  font-size: 20px;
+  cursor: pointer;
+  display: none; /* bật khi responsive */
+}

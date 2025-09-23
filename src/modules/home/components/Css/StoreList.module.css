@@ -1,0 +1,46 @@
+.subtitle {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.storeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.storeItem {
+  text-align: left;
+  padding: 16px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f9fafb;
+  transition: box-shadow 0.2s, transform 0.1s;
+}
+
+.storeItem:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.storeItem h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.storeItem p {
+  font-size: 15px;
+  color: #4b5563;
+  margin: 2px 0;
+}
+
+.error {
+  color: #dc2626;
+  font-weight: 500;
+  margin: 16px 0;
+}
