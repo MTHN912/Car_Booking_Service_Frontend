@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { createContext, useContext, useEffect, useState } from "react";
-import type { AuthContextType, User } from "../../../types/auth";
+import type { AuthContextType } from "../../../types/auth";
+import type { User } from "../../../types/user";
 import { getCurrentUser } from "../../user/services/userService";
 import { login, logout, register } from "../services/authService";
 

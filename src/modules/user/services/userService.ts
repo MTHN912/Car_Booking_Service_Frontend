@@ -1,10 +1,5 @@
 import axios from "../../../utils/axios";
-
-export type User = {
-  id: string;
-  name: string;
-  email: string;
-};
+import type {User} from "../../../types/user"
 
 export async function getCurrentUser() {
   const res = await axios.get<User>("/users/me", { withCredentials: true });

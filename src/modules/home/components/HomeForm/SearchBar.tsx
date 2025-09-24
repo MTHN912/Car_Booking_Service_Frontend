@@ -1,9 +1,7 @@
 import { useState } from "react";
-import styles from "../Css/Search.module.css";
+import type { SearchBarProps } from "../../../../types/home";
+import styles from "../css/Search.module.css";
 
-type SearchBarProps = {
-  onSearch: (address: string) => void;
-};
 
 export default function SearchBar({ onSearch }: SearchBarProps) {
   const [input, setInput] = useState("");

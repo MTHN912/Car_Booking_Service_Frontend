@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import HomeForm from "../components/HomeForm/";
-import type { Store } from "../services/homeService";
+import type { Store } from "../../../types/store";
 import { geocodeAddress, getNearbyStores } from "../services/homeService";
 
 export default function HomePage() {

@@ -1,16 +1,18 @@
 import type { RouteObject } from "react-router-dom";
+import GuestRoute from "./components/GuestRoute";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 
 const authRoutes: RouteObject[] = [
   {
     path: "/login",
-    element: <LoginPage />,
+    element: <GuestRoute><LoginPage /></GuestRoute>,
   },
+
   {
     path: "/register",
-    element: <RegisterPage />,
-  },
+    element: <GuestRoute><RegisterPage /></GuestRoute>,
+  }
 ];
 
 export default authRoutes;
