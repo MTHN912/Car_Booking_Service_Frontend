@@ -1,20 +1,20 @@
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { InputField } from "./InputField";
+import { InputField } from "./fields/InputField";
 import styles from "./css/LoginForm.module.css";
 import type { LoginFormProps } from "../../../types/auth";
+import { useLoginForm } from "./hooks/useLoginForm";
 
 export default function LoginForm({ onSubmit, loading, error }: LoginFormProps) {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [show, setShow] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSubmit(email, password);
-    setPassword("");
-  };
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    show,
+    toggleShow,
+    handleSubmit,
+  } = useLoginForm(onSubmit);
 
   return (
     <div className={styles.container}>
@@ -36,7 +36,7 @@ export default function LoginForm({ onSubmit, loading, error }: LoginFormProps) 
           value={password}
           onChange={setPassword}
           withToggle
-          onToggle={() => setShow((s) => !s)}
+          onToggle={toggleShow}
         />
 
         <div className={styles.options}>

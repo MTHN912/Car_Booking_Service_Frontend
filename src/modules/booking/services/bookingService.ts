@@ -1,22 +1,16 @@
 import axios from "../../../utils/axios";
-
-export type BookingPayload = {
-  storeId: string;
-  date: string;
-  time: string;
-  note?: string;
-};
-
-export type BookingResponse = {
-  id: string;
-  storeId: string;
-  date: string;
-  time: string;
-  note?: string;
-  status: string;
-};
+import type {BookingPayload, BookingResponse} from "../../../types/booking"
 
 export async function createBooking(payload: BookingPayload): Promise<BookingResponse> {
-  const res = await axios.post("/bookings", payload, { withCredentials: true });
+  const res = await axios.post("/bookings", payload, { 
+    withCredentials: true 
+  });
+  return res.data.data;
+}
+
+export async function getServicesByCategory(storeId: string, category: string) {
+  const res = await axios.get(`/stores/${storeId}/services/category/${category}`, {
+    withCredentials: true,
+  });
   return res.data.data;
 }
