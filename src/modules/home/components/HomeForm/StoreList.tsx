@@ -1,15 +1,20 @@
-import styles from "../Css/StoreList.module.css";
-import type { Store } from "../../services/homeService";
+import { useNavigate } from "react-router-dom";
+import type { StoreListProps } from "../../../../types/home";
+import { getStoreById } from "../../services/homeService";
+import styles from "../css/StoreList.module.css";
 
-type StoreListProps = {
-  searchMode: "gps" | "address";
-  address: string;
-  stores: Store[];
-  loading: boolean;
-  error: string | null;
-};
 
 export default function StoreList({ searchMode, address, stores, loading, error }: StoreListProps) {
+  const navigate = useNavigate();
+
+  const handleStoreClick = async (storeId: string) => {
+    try {
+      const storeDetail = await getStoreById(storeId);
+      navigate(`/bookings/new?storeId=${storeId}`, { state: { store: storeDetail } });
+    } catch (err) {
+      console.error("Không thể lấy chi tiết cửa hàng:", err);
+    }
+};
   return (
     <div>
       <h2 className={styles.subtitle}>
@@ -22,8 +27,13 @@ export default function StoreList({ searchMode, address, stores, loading, error 
       {error && <p className={styles.error}>{error}</p>}
 
       <ul className={styles.storeList}>
-        {stores.map((store, idx) => (
-          <li key={idx} className={styles.storeItem}>
+        {stores.map((store) => (
+          <li
+            key={store.id}
+            className={styles.storeItem}
+            onClick={() => handleStoreClick(store.id)}
+            style={{ cursor: "pointer" }}
+          >
             <h3>{store.name}</h3>
             <p>{store.address}</p>
             <p>Cách vị trí đã chọn khoảng {store.distance.toFixed(2)} km</p>

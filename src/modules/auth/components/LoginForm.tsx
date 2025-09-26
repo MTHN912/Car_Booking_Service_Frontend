@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { InputField } from "./InputField";
-import styles from "./LoginForm.module.css";
+import styles from "./css/LoginForm.module.css";
 import type { LoginFormProps } from "../../../types/auth";
 
 export default function LoginForm({ onSubmit, loading, error }: LoginFormProps) {

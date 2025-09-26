@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import type { FormData, RegisterFormProps } from "../../../types/auth";
 import { InputField } from "./InputField";
-import styles from "./RegisterForm.module.css";
+import styles from "./css/RegisterForm.module.css";
 
 export default function RegisterForm({ onSubmit, errors, loading }: RegisterFormProps) {
   const navigate = useNavigate();

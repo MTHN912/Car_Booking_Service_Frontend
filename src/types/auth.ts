@@ -1,3 +1,5 @@
+import type { User } from "./user";
+
 // kiểu của register
 export type FormData = {
   fullname: string;
@@ -34,12 +36,6 @@ export type LoginFormProps = {
 };
 
 // context
-export type User = {
-  id: string;
-  name: string;
-  email: string;
-};
-
 export type AuthContextType = {
   user: User | null;
   isAuthenticated: boolean;

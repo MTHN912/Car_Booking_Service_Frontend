@@ -1,9 +1,5 @@
-import styles from "../Css/RadiusFilter.module.css";
-
-type RadiusFilterProps = {
-  radius: number;
-  onRadiusChange: (r: number) => void;
-};
+import styles from "../css/RadiusFilter.module.css";
+import type { RadiusFilterProps } from "../../../../types/home";
 
 export default function RadiusFilter({ radius, onRadiusChange }: RadiusFilterProps) {
   return (

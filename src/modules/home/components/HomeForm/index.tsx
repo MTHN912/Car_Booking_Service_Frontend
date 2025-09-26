@@ -1,17 +1,7 @@
+import type { HomeFormProps } from "../../../../types/home";
 import RadiusFilter from "./RadiusFilter";
 import SearchBar from "./SearchBar";
 import StoreList from "./StoreList";
-
-type HomeFormProps = {
-  onSearchByAddress: (address: string) => void;
-  onRadiusChange: (radius: number) => void;
-  radius: number;
-  searchMode: "gps" | "address";
-  address: string;
-  loading: boolean;
-  error: string | null;
-  stores: any[];
-};
 
 export default function HomeForm({
   onSearchByAddress,
