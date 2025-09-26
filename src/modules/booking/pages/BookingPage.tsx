@@ -1,8 +1,9 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
-import BookingForm from "../components/BookingForm";
-import { createBooking, type BookingPayload } from "../services/bookingService";
+import BookingForm from "../components/BookingForm/BookingForm";
+import { createBooking } from "../services/bookingService";
+import type { BookingPayload } from "../../../types/booking";
 
-export default function NewBookingPage() {
+export default function BookingPage() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const storeId = searchParams.get("storeId");
@@ -15,11 +16,11 @@ export default function NewBookingPage() {
     try {
       const booking = await createBooking(payload);
       navigate(`/bookings/${booking.id}`);
-    } catch (err) {
-      console.error("Tạo booking thất bại:", err);
-      alert("Có lỗi xảy ra khi đặt lịch!");
+    } catch (error) {
+      console.error("Tạo booking thất bại:", error);
+      alert("Có lỗi xảy ra khi đặt lịch. Vui lòng thử lại!");
     }
   };
 
-  return <BookingForm storeId={storeId} onSubmit={handleCreateBooking} />;
+  return (<BookingForm storeId={storeId} onSubmit={handleCreateBooking}/>);
 }

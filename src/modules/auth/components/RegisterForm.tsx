@@ -1,32 +1,18 @@
-import React, { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import type { FormData, RegisterFormProps } from "../../../types/auth";
-import { InputField } from "./InputField";
+import type { RegisterFormProps } from "../../../types/auth";
 import styles from "./css/RegisterForm.module.css";
+import { InputField } from "./fields/InputField";
+import { useRegisterForm } from "./hooks/useRegisterForm";
 
 export default function RegisterForm({ onSubmit, errors, loading }: RegisterFormProps) {
   const navigate = useNavigate();
-  const [form, setForm] = useState<FormData>({
-    fullname: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    agreeTerms: false,
-  });
-
-  const [showPassword, setShowPassword] = useState(false);
-
-  const handleChange = useCallback(
-    (key: keyof FormData, value: string | boolean) => {
-      setForm((prev) => ({ ...prev, [key]: value }));
-    },
-    []
-  );
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSubmit(form);
-  };
+  const {
+    form,
+    handleChange,
+    handleSubmit,
+    showPassword,
+    togglePassword,
+  } = useRegisterForm(onSubmit);
 
   return (
     <div className={styles.container}>
@@ -58,7 +44,7 @@ export default function RegisterForm({ onSubmit, errors, loading }: RegisterForm
           onChange={(v) => handleChange("password", v)}
           errors={errors.password}
           withToggle
-          onToggle={() => setShowPassword((s) => !s)}
+          onToggle={togglePassword}
         />
 
         {/* Nhập lại mật khẩu */}

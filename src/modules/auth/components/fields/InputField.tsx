@@ -1,5 +1,5 @@
-import type { InputFieldProps } from "../../../types/auth";
-import styles from "./css/RegisterForm.module.css";
+import type { InputFieldProps } from "../../../../types/auth";
+import styles from "../css/RegisterForm.module.css";
 
 export function InputField({ type, placeholder, value, onChange, errors, withToggle, onToggle }: InputFieldProps) {
   return (
