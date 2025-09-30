@@ -1,5 +1,4 @@
 export type BookingPayload = {
-  storeId: string;
   name: string;
   phone: string;
   email?: string;

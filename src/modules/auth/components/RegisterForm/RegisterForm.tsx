@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import type { RegisterFormProps } from "../../../types/auth";
-import styles from "./css/RegisterForm.module.css";
-import { InputField } from "./fields/InputField";
-import { useRegisterForm } from "./hooks/useRegisterForm";
+import type { RegisterFormProps } from "../../../../types/auth";
+import { InputField } from "../fields/InputField";
+import { useRegisterForm } from "./useRegisterForm";
+import styles from "../RegisterForm/RegisterForm.module.css";
 
 export default function RegisterForm({ onSubmit, errors, loading }: RegisterFormProps) {
   const navigate = useNavigate();

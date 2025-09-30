@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { InputField } from "./fields/InputField";
-import styles from "./css/LoginForm.module.css";
-import type { LoginFormProps } from "../../../types/auth";
-import { useLoginForm } from "./hooks/useLoginForm";
+import type { LoginFormProps } from "../../../../types/auth";
+import { InputField } from "../fields/InputField";
+import { useLoginForm } from "./useLoginForm";
+import styles from "../LoginForm/LoginForm.module.css";
 
 export default function LoginForm({ onSubmit, loading, error }: LoginFormProps) {
   const navigate = useNavigate();
