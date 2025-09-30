@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import type { FormData, FormErrors } from "../../../types/auth";
-import RegisterForm from "../components/RegisterForm";
+import RegisterForm from "../components/RegisterForm/RegisterForm";
 import { useAuth } from "../context/AuthContext";
 
 export default function RegisterPage() {

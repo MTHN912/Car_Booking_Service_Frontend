@@ -58,7 +58,6 @@ export const useBookingForm = (storeId: string, onSubmit: (payload: BookingPaylo
 
     try {
       await onSubmit({
-        storeId,
         name: form.name,
         phone: form.phone,
         email: form.email,

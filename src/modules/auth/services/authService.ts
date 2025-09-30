@@ -16,3 +16,8 @@ export async function logout() {
   const res = await axios.post(`${API_URL}/logout`, {}, { withCredentials: true });
   return res.data;
 }
+
+export async function refresh() {
+  const res = await axios.post(`${API_URL}/refresh`, {}, { withCredentials: true });
+  return res.data;
+}

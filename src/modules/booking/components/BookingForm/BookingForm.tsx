@@ -1,11 +1,11 @@
-import { useBookingForm } from "./hooks/useBookingForm";
-import InputField from "./fields/InputField";
-import SelectField from "./fields/SelectField";
-import CheckboxField from "./fields/CheckboxField";
-import RadioGroupField from "./fields/RadioGroupField";
-import FormField from "./fields/FormField";
-import styles from "./css/Booking.module.css";
 import type { BookingFormProps } from "../../../../types/booking";
+import styles from "./css/Booking.module.css";
+import CheckboxField from "./fields/CheckboxField";
+import FormField from "./fields/FormField";
+import InputField from "./fields/InputField";
+import RadioGroupField from "./fields/RadioGroupField";
+import SelectField from "./fields/SelectField";
+import { useBookingForm } from "./hooks/useBookingForm";
 
 export default function BookingForm({ storeId, onSubmit }: BookingFormProps) {
   const {

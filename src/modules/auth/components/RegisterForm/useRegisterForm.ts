@@ -1,4 +1,3 @@
-// src/components/RegisterForm/hooks/useRegisterForm.ts
 import { useState, useCallback } from "react";
 import type { FormData } from "../../../../types/auth";
 

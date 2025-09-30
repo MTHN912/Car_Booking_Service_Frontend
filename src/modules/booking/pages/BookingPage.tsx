@@ -14,7 +14,7 @@ export default function BookingPage() {
 
   const handleCreateBooking = async (payload: BookingPayload) => {
     try {
-      const booking = await createBooking(payload);
+      const booking = await createBooking(storeId, payload);
       navigate(`/bookings/${booking.id}`);
     } catch (error) {
       console.error("Tạo booking thất bại:", error);
@@ -22,5 +22,7 @@ export default function BookingPage() {
     }
   };
 
-  return (<BookingForm storeId={storeId} onSubmit={handleCreateBooking}/>);
+  return (
+    <BookingForm storeId={storeId} onSubmit={handleCreateBooking} />
+  );
 }
