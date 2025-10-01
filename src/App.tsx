@@ -1,8 +1,9 @@
 import { BrowserRouter, useRoutes } from "react-router-dom";
+import adminRoutes from "./modules/admin/adminRoutes";
 import { AuthProvider } from "./modules/auth/context/AuthContext";
 import authRoutes from "./modules/auth/routesAuth";
-import homeRoutes from "./modules/home/routesHome";
 import bookingRoutes from "./modules/booking/routesBooking";
+import homeRoutes from "./modules/home/routesHome";
 import Layout from "./modules/layout/routesLayout";
 
 function AppRoutes() {
@@ -14,6 +15,7 @@ function AppRoutes() {
         ...homeRoutes,
         ...authRoutes,
         ...bookingRoutes,
+        ...adminRoutes
       ],
     },
   ];

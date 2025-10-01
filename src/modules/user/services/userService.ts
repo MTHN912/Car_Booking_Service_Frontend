@@ -1,9 +1,9 @@
+import type { ApiResponse, User } from "../../../types/user";
 import axios from "../../../utils/axios";
-import type {User} from "../../../types/user"
 
 export async function getCurrentUser() {
-  const res = await axios.get<User>("/users/me", { withCredentials: true });
-  return res.data;
+  const res = await axios.get<ApiResponse<User>>("/users/me", { withCredentials: true });
+  return res.data.data;
 }
 
 export async function updateUser(data: Partial<User>) {

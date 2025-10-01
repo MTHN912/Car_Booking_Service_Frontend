@@ -4,7 +4,7 @@ import type { RadiusFilterProps } from "../../../../types/home";
 export default function RadiusFilter({ radius, onRadiusChange }: RadiusFilterProps) {
   return (
     <div className={styles.filter}>
-      <label htmlFor="radius">Bán kính tìm kiếm: </label>
+      <label htmlFor="radius">Radius of Search: </label>
       <select
         id="radius"
         value={radius}

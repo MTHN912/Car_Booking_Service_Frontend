@@ -18,6 +18,9 @@ export default function Header() {
     navigate("/login");
   };
 
+   const handleDashboardClick = () => {
+    navigate("/admin/dashboard");
+  };
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -39,16 +42,22 @@ export default function Header() {
           onClick={handleAccountClick}
           style={{ cursor: "pointer" }}
         >
-          {user ? "Tài khoản" : "Tài khoản"}
+          {user ? "Account" : "Account"}
         </span>
+
+        {user?.role === "ADMIN" && (
+          <button className={styles.button} onClick={handleDashboardClick}>
+            Dashboard
+          </button>
+        )}
 
         {user ? (
           <button className={styles.button} onClick={logout}>
-            Đăng Xuất
+            Logout
           </button>
         ) : (
           <button className={styles.button} onClick={handleRegisterClick}>
-            Đăng Nhập
+            Login
           </button>
         )}
       </div>
