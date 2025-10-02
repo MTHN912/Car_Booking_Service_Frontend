@@ -1,7 +1,7 @@
 import React from "react";
-import type { Store } from "./hooks/useStore";
-import styles from "./storeList.module.css";
-
+import { FiEye } from "react-icons/fi";
+import type { Store } from "../hooks/useStore";
+import styles from "../css/storeList.module.css";
 interface Props {
   stores: Store[];
   loading: boolean;
@@ -15,6 +15,7 @@ const StoreTable: React.FC<Props> = ({ stores, loading, onViewDetail }) => {
     <table className={styles.table}>
       <thead>
         <tr>
+          <th>STT</th>
           <th>Tên cửa hàng</th>
           <th>Địa chỉ</th>
           <th>Ngày tạo</th>
@@ -22,15 +23,17 @@ const StoreTable: React.FC<Props> = ({ stores, loading, onViewDetail }) => {
         </tr>
       </thead>
       <tbody>
-        {stores.map((s) => (
+        {stores.map((s, index) => (
           <tr key={s.id}>
+            <td>{index + 1}</td>
             <td>{s.name}</td>
             <td>{s.address}</td>
             <td>{new Date(s.createdAt).toLocaleString("vi-VN")}</td>
             <td>
               <button onClick={() => onViewDetail(s)} className={styles.detailBtn}>
-                Xem chi tiết
-              </button>
+              <FiEye size={16} />
+              Xem chi tiết
+            </button>
             </td>
           </tr>
         ))}

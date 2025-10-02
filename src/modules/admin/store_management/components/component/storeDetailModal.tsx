@@ -1,7 +1,7 @@
 import React from "react";
-import { useStoreServices } from "../components/hooks/useStoreService";
-import type { Store } from "./hooks/useStore";
-import styles from "./storeDetailModal.module.css";
+import type { Store } from "../hooks/useStore";
+import { useStoreServices } from "../hooks/useStoreService";
+import styles from "../css/storeDetailModal.module.css";
 
 interface Props {
   store: Store | null;

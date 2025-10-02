@@ -5,15 +5,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
+  padding: 20px;
 }
 
 .modal {
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  min-width: 300px;
-  max-width: 500px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  width: 80%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
 .closeBtn {
@@ -29,18 +33,24 @@
 .closeBtn:hover {
   background: #1a252f;
 }
+
 .table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
+  font-size: 14px;
 }
 
 .table th, .table td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 10px;
 }
 
 .table th {
-  background: #f1f1f1;
+  background: #f1f5f1;
   text-align: left;
+}
+
+.table tr:nth-child(even) {
+  background: #fafafa;
 }

@@ -13,10 +13,11 @@ export default function UserManagement({ users, loading, error }: Props) {
 
   return (
     <div className={styles.container}>
-      <h1>User Management</h1>
+      <h2>User Management</h2>
       <table className={styles.table}>
         <thead>
           <tr>
+            <th>STT</th>
             <th>Email</th>
             <th>Name</th>
             <th>Role</th>
@@ -28,6 +29,7 @@ export default function UserManagement({ users, loading, error }: Props) {
         <tbody>
           {users.map((u, i) => (
             <tr key={i}>
+              <td>{i + 1}</td>
               <td>{u.email}</td>
               <td>{u.name}</td>
               <td>{u.role}</td>
