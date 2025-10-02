@@ -1,0 +1,56 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.closeBtn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  background: #1a252f;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.table th {
+  background: #f1f5f1;
+  text-align: left;
+}
+
+.table tr:nth-child(even) {
+  background: #fafafa;
+}

@@ -12,18 +12,18 @@ export default function StoreList({ searchMode, address, stores, loading, error 
       const storeDetail = await getStoreById(storeId);
       navigate(`/bookings/new?storeId=${storeId}`, { state: { store: storeDetail } });
     } catch (err) {
-      console.error("Không thể lấy chi tiết cửa hàng:", err);
+      console.error("Unable to fetch store details:", err);
     }
 };
   return (
     <div>
       <h2 className={styles.subtitle}>
         {searchMode === "gps"
-          ? "Cửa hàng gần vị trí hiện tại của bạn"
-          : `Cửa hàng gần: ${address}`}
+          ? "Stores near your current location"
+          : `Stores near: ${address}`}
       </h2>
 
-      {loading && <p>Đang tải cửa hàng...</p>}
+      {loading && <p>Loading stores...</p>}
       {error && <p className={styles.error}>{error}</p>}
 
       <ul className={styles.storeList}>
@@ -36,7 +36,7 @@ export default function StoreList({ searchMode, address, stores, loading, error 
           >
             <h3>{store.name}</h3>
             <p>{store.address}</p>
-            <p>Cách vị trí đã chọn khoảng {store.distance.toFixed(2)} km</p>
+            <p>Approximately {store.distance.toFixed(2)} km</p>
           </li>
         ))}
       </ul>
